@@ -242,7 +242,31 @@ int main()
     //   3    3
     //    4  4
     //     55
-    
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            if (i == j)
+                cout << i;
+            else
+                cout << " ";
+        }
+        for (int k = 1; k <= 2 * n - 2 * i; k++)
+        {
+            cout << " ";
+        }
+        cout << i << endl;
+    }
+    cout << "\n----------" << endl;
+
+    // 1        1
+    // 12      21
+    // 123    321
+    // 1234  4321
+    // 1234554321
+    for (int i = 1; i <= n; i++)
+    {
+    }
 
     return 0;
 }
