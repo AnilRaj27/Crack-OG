@@ -464,18 +464,14 @@ int main()
     // [4 3 2 2 2 3 4]
     // [4 3 3 3 3 3 4]
     // [4 4 4 4 4 4 4]
-    for (int i = n; i >= 1; i--)
+    int size = 2 * n - 1;
+    for (int i = 1; i <= size; i++)
     {
-        for (int j = n; j >= i; j--)
+        for (int j = 1; j <= size; j++)
         {
-            cout << j;
-        }
-        for (int k = 1; k < i; k++)
-        {
-            cout << i;
+            
         }
         cout << endl;
     }
-
     return 0;
 }
