@@ -438,6 +438,41 @@ int main()
     // *        *
 
     cout << "\n----------" << endl;
+    for (int i = 1; i < 2 * n; i++)
+    {
+        if (i <= n)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                cout << "*";
+            }
+            for (int k = i + 1; k <= 2 * n - i; k++)
+            {
+                cout << " ";
+            }
+            for (int l = 1; l <= i; l++)
+            {
+                cout << "*";
+            }
+        }
+        else
+        {
+            for (int j = 1; j <= 2 * n - i; j++)
+            {
+                cout << "*";
+            }
+            for (int k = j + 1; k <= 2 * (i - n); k++)
+            {
+                cout << " ";
+            }
+            for (int l = 2 * n - 1; l >= i; l--)
+            {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+    cout << "\n----------" << endl;
 
     // *****
     // *   *
@@ -457,6 +492,7 @@ int main()
     }
     cout << "\n----------" << endl;
 
+    // Inner Reducing Pattern
     // [4 4 4 4 4 4 4]
     // [4 3 3 3 3 3 4]
     // [4 3 2 2 2 3 4]
@@ -465,13 +501,30 @@ int main()
     // [4 3 3 3 3 3 4]
     // [4 4 4 4 4 4 4]
     int size = 2 * n - 1;
-    for (int i = 1; i <= size; i++)
+    for (i = 0; i < size; i++)
     {
-        for (int j = 1; j <= size; j++)
+        for (j = 0; j < size; j++)
         {
-            
+            cout << n - min(min(i, j), min(size - 1 - i, size - 1 - j));
         }
         cout << endl;
+
+        // if (i <= n)
+        // {
+        //     for (j = 0; j < i; j++)
+        //     {
+        //         cout << n - j;
+        //     }
+        //     for (k = i; k < n; k++)
+        //     {
+        //         cout << n - j + 1;
+        //     }
+        //     for (l = 0; l < i; l++)
+        //     {
+        //         cout << n - j + 1;
+        //     }
+        //     cout << endl;
+        // }
     }
     return 0;
 }
