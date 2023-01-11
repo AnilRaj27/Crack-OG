@@ -16,7 +16,7 @@ int gcd(int num1, int num2)
 
 int gcd_recursive(int num1, int num2)
 {
-    // gcd(a, b) = gcd(b, a%b)
+    // formula: gcd(a, b) = gcd(b, a%b)
     if (num2 == 0)
     {
         return num1;
@@ -32,7 +32,7 @@ int main()
 
     int result = gcd(num1, num2);
     int recursiveResult = gcd_recursive(num1, num2);
-    cout << "The GCD of the two numbers is " << result << endl;
+    cout << "GCD of the two numbers is " << result << endl;
 
     return 0;
 }
