@@ -1,27 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int factorial(int n)
+vector<int> reverse(vector<int> &arr, int beg, int end)
 {
-
-    if (n == 1)
-        return 1;
-    return n * factorial(n - 1);
+    if (beg >= end)
+        return arr;
+    swap(arr[beg], arr[end]);
+    return reverse(arr, beg + 1, end - 1);
 }
 
 int main()
 {
-    int n;
-    cout << "Enter a number: " << endl;
-    cin >> n;
+    vector<int> arr = {1, 2, 3, 4, 5};
+    vector<int> result = reverse(arr, 0, arr.size() - 1);
 
-    for (int i = 1; i <= n; i++)
-    {
-        int result = factorial(i);
-        if (result > n)
-            break;
-        cout << result << " ";
-    }
+    for (auto &x : arr)
+        cout << x << " ";
     cout << endl;
 
     return 0;
