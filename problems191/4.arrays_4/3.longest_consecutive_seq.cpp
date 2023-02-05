@@ -42,8 +42,24 @@ int main()
     unordered_set<int> s;
     for (auto &x : arr)
         s.insert(x);
+    int longestSteak = 0;
+    for (int num : arr)
+    {
+        if (!s.count(num - 1))
+        {
+            int currentNum = num;
+            int currentStreak = 1;
 
-    cout << maxStreakCount << endl;
+            while (s.count(currentNum + 1))
+            {
+                currentNum++;
+                currentStreak++;
+            }
+            longestSteak = max(currentStreak, longestSteak);
+        }
+    }
+
+    cout << longestSteak << endl;
 
     return 0;
 }
