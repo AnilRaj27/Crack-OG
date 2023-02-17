@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode *next;
+};
+
+bool main(ListNode *head)
+{
+    ListNode *slow = head;
+    ListNode *fast = head;
+
+    /// Find Mid
+    while (fast && fast->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    ListNode *prev = NULL;
+    ListNode *temp = NULL;
+    ListNode *curr = slow;
+
+    // Revrse last half
+    while (curr)
+    {
+        temp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
+    }
+
+    // check first half and last half is equal
+    while (prev && head)
+    {
+        if (prev->val != head->val)
+            return false;
+        prev = prev->next;
+        head = head->next;
+    }
+
+    return true;
+}
