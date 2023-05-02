@@ -11,6 +11,9 @@ double multiply(double num, int n)
     return ans;
 }
 
+// TC: N*log(M*10^d)
+// SC: O(1)
+
 int main()
 {
     int n = 3, m = 27;
